@@ -215,3 +215,41 @@ function shuffle(array) {
     }
     return array;
 }
+
+
+/************************************** NESTED FUNCTION */
+
+let userName = "Bro";
+let userInbox = 0;
+
+login();
+
+function login()
+{
+    displayUserName();      // nested functions
+    displayUserInbox();     // can not be executed outside the host function
+
+    function displayUserName() {
+        console.log(`Welcome ${userName}.`);
+    }
+
+    function displayUserInbox() {
+        console.log(`You have ${userInbox} new messages.`);
+    }
+}
+
+/************************************** MAP = key-value pairs array */
+
+const store = new Map([
+    ["t-shirt", 20],
+    ["jeans", 30],
+    ["socks", 10],
+    ["underware", 50]
+]);
+let shoppingCart = 0;
+// shoppingCart += store.get("t-shirt");
+// store.set("hat", 15);
+// store.delete("hat");
+// console.log(store.has("underware"));
+// console.log(store.size);
+store.forEach((value, key) => console.log(`${key} $${value}`));
