@@ -253,3 +253,43 @@ let shoppingCart = 0;
 // console.log(store.has("underware"));
 // console.log(store.size);
 store.forEach((value, key) => console.log(`${key} $${value}`));
+
+
+/******* OBJECT, THIS ******/
+
+const car = {
+    model:"Ford",
+    color:"red",
+    year:2023,
+
+    drive: function() {
+        console.log(`You drive the car ${this.model}`);
+    },
+    brake: function() {
+        console.log("You step on the brake");
+    }
+}
+
+car.drive();
+car.brake();
+
+/************* CLASS ************/
+
+class Player {
+    score = 1;
+
+    pause() {
+        console.log("You paused the game");
+    }
+    exit() {
+        console.log("You exit the game");
+    }
+}
+
+const player1 = new Player();
+const player1 = new Player();
+
+player1.score += 1;
+console.log(player1.score);
+player1.pause();
+player2.exit();
