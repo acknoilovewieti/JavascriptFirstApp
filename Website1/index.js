@@ -278,6 +278,17 @@ car.brake();
 class Player {
     score = 1;
 
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    constructor() {}
+
+    study() {
+        console.log($`{this.name} is studying`); 
+    }
+
     pause() {
         console.log("You paused the game");
     }
@@ -287,9 +298,56 @@ class Player {
 }
 
 const player1 = new Player();
-const player1 = new Player();
+const player2 = new Player();
+const student1 = new Player("Vasya", 22);
 
 player1.score += 1;
 console.log(player1.score);
 player1.pause();
 player2.exit();
+student1.study();
+
+/************* CLASS ************/
+
+class Animal {
+    alive = true;
+    constructor(speed){
+        this.speed = speed;
+    }
+    eat(){
+        console.log(`This ${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`This ${this.name} is sleeping`);
+    }
+}
+
+class Rabbit extends Animal {
+    constructor(speed, age){
+        super(speed);
+        this.age = age;
+    }
+    name = "rabbit";
+    run (){
+        console.log(`This ${this.name} is running`);
+    }
+}
+
+class Fish extends Animal {
+    constructor(speed, weight){   
+        super(speed);
+        this.weight = weight;
+    }
+    name = "fish";
+    swim (){    
+        console.log(`This ${this.name} is swimming`);
+    }
+}
+
+const rabbit1 = new Rabbit(100,5);
+const fish1 = new Fish(70,12);
+console.log(rabbit1.alive)
+rabbit1.eat();
+rabbit1.run();
+fish1.sleep();
+fish1.swim();
