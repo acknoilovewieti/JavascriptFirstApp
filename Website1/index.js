@@ -150,7 +150,6 @@ function print(element) {
     console.log(element);
 }
 
-
 /********************************************** map*/
 
 let numbers = [10,20,30];
@@ -273,7 +272,7 @@ const car = {
 car.drive();
 car.brake();
 
-/************* CLASS ************/
+/************* CLASS / Constructor ************/
 
 class Player {
     score = 1;
@@ -283,10 +282,8 @@ class Player {
         this.age = age;
     }
 
-    constructor() {}
-
     study() {
-        console.log($`{this.name} is studying`); 
+        console.log(`${this.name} is studying`); 
     }
 
     pause() {
@@ -307,7 +304,7 @@ player1.pause();
 player2.exit();
 student1.study();
 
-/************* CLASS ************/
+/************* CLASS / Inheritance / Super-InvokeParentConstructor ************/
 
 class Animal {
     alive = true;
@@ -351,3 +348,31 @@ rabbit1.eat();
 rabbit1.run();
 fish1.sleep();
 fish1.swim();
+
+/************* CLASS / Getters / Setters ************/
+
+class Car{
+    constructor(power){
+        this._gas = 25;
+        this._power = power;
+    }
+    get power(){
+        return `${this._power}hp`;
+    }
+    get gas(){
+        return `${this._gas}L (${this._gas / 50 * 100})%`;
+    }
+    set gas(value){
+        if(value>50){
+            value = 5
+        }
+        else if (value<0){
+            value = 0;
+        }
+        this._gas = value;
+    }
+}
+
+let car1 = new Car(400);
+console.log(car1.gas);
+console.log(car1.power);
