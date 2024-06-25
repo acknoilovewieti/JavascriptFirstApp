@@ -376,3 +376,26 @@ class Car{
 let car1 = new Car(400);
 console.log(car1.gas);
 console.log(car1.power);
+
+/************* Anonymous Obj ************/
+
+class Card{
+    constructor(value, suit){
+        this.value = value;
+        this.suit = suit;
+    }
+}
+
+let cardsdeck = [
+    new Card("A", "Hearts"),
+    new Card("A", "Spades"),
+    new Card("A", "Diamonds"),
+    new Card("A", "Clubs"),
+    new Card("2", "Hearts"),
+    new Card("2", "Spades"),
+    new Card("2", "Diamonds"),
+    new Card("2", "Clubs"),
+];
+
+console.log(cardsdeck[3].value + cardsdeck[3].suit);
+cardsdeck.forEach(card => console.log(`${card.value} ${card.suit}`));
