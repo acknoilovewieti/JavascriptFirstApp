@@ -417,3 +417,7 @@ catch(error){
 finally{
     console.log("This always executes.");
 }
+
+/************* setInteraval() ************/
+setTimeout(func, ms) // func after ms
+setInteraval(func, ms) // repeat func each ms
