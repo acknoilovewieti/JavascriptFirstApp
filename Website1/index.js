@@ -440,3 +440,34 @@ function formatDate(date){
     return `${year}-${month}-${day}`
 }
 console.log(formatDate(date1));
+
+/************* Clock ************/
+document.getElementById("section6").innerHTML = "-----------------SECTION3";
+
+const myLabel = document.getElementById("labelClock");
+
+updateClock();
+setInterval(updateClock, 1000);
+
+function updateClock(){
+    let date = new Date();
+    myLabel.innerHTML = formatTime(date);
+
+    function formatTime(date){
+        let h = date.getHours();
+        let m = date.getMinutes();
+        let s = date.getSeconds();
+        let amOrPm = h >= 12 ? "pm" : "am";
+
+        h = (h % 12) || 12;
+        h = formatZeroes(h);
+        m = formatZeroes(m);
+        s = formatZeroes(s);
+        return `${h}:${m}:${s} ${amOrPm}`;
+    }
+
+    function formatZeroes(time){
+        time = time.toString();
+        return time.length < 2 ? "0" + time : time;
+    }
+}
