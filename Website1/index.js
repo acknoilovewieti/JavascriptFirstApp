@@ -403,7 +403,8 @@ cardsdeck.forEach(card => console.log(`${card.value} ${card.suit}`));
 /************* Error Handling ************/
 
 try{
-    let x = window.prompt("Enter a #:");
+    // let x = window.prompt("Enter a #:"); uncomment this line when run
+    let x = 234;
     x = Number(x);
 
     if (isNaN(x)) throw "That wasn't a number!";
@@ -418,6 +419,24 @@ finally{
     console.log("This always executes.");
 }
 
-/************* setInteraval() ************/
+/************* setInteraval() ************
 setTimeout(func, ms) // func after ms
 setInteraval(func, ms) // repeat func each ms
+
+/************* Date object ************/
+
+let date1 = new Date()
+console.log(date1);
+date1 = date1.toLocaleString();
+console.log(date1);
+date1 = new Date(2023,0,1,2,3,4,5)
+date1.setMonth(11);
+console.log(date1);
+
+function formatDate(date){
+    let day = date.getDate();
+    let month = date.getMonth()+1;
+    let year = date.getFullYear();
+    return `${year}-${month}-${day}`
+}
+console.log(formatDate(date1));
