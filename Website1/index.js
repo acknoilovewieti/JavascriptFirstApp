@@ -471,3 +471,19 @@ function updateClock(){
         return time.length < 2 ? "0" + time : time;
     }
 }
+
+/************* setTimeout / setInterval ************/
+const firstMessage = () => console.log("1st message.");
+const secondMessage= () => console.log("2nd message.");
+setTimeout(firstMessage, 3000);
+setTimeout(secondMessage, 1000);
+
+let counterTimer = 0;
+const myTimer = setInterval(countUp, 100);
+function countUp(){
+    counterTimer += 1;
+    console.log(counterTimer);
+    if (counterTimer >= 10) {
+        clearInterval(myTimer);
+    }
+}
