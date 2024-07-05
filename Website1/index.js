@@ -502,3 +502,28 @@ const promise = new Promise((resolve, reject) => {
 
 promise.then(value => console.log(value))
     .catch(error => console.log(error));
+
+/************* async=makes a function return a Promise *****************/    
+
+async function loadFile(){
+    let fileLoaded = true;
+    if(fileLoaded){
+        return "File loaded";
+    }
+    else{
+        throw "File NOT loaded";
+    }
+}
+
+loadFile().then(value => console.log(value))
+    .catch(error => console.log(error));
+
+/************* await = makes an async function wait for a Promise *****************/    
+async function startProcess() {
+    let message3 = await loadFile();
+    console.log(message3);
+}
+
+startProcess()
+
+
